@@ -1,5 +1,5 @@
 # LinkDiscoveryTShark
-This is a Powershell script that was put together for the purpose of detecting the network device using Npcap and TShark then opening it in a browser to have the information display in a more presentable manner.
+This is a Powershell script that was put together for the purpose of detecting the network device using Npcap and TShark then presenting the information in a browser.
 
 ## Prerequisites
 * [Wireshark](https://www.wireshark.org/)
@@ -8,7 +8,8 @@ This is a Powershell script that was put together for the purpose of detecting t
  
 ## LinkDiscoveryTShark
 
-```
+```ruby
+
 # ==========================================
 #  Link-Discovery-TShark.ps1
 #  High-Precision Link Discovery (TShark/Npcap)
@@ -171,8 +172,19 @@ $htmlContent = @"
 Write-Host "`nDisplaying results in browser." -ForegroundColor Green
 $htmlContent | Out-File -FilePath $htmlFile -Encoding utf8
 Invoke-Item $htmlFile
+
 ```
+
 ### What it does
-The `.ps1` and `.bat` were both uploaded for simple download and go. Download both to the same location, run `Link-Discovery-TShark.bat` as an admin and you'll start `Link-Discovery-TShark.ps1`. 
-Powershell should pop-up and ask you which network adapter you'd like to use. It'll listen for 60 seconds due to some devices only broadcasting in that interval. The data captured will be put into a variable and organized to fit an HTML format. 
+The `.ps1` and `.bat` were both uploaded for simple download and go. Download both to the same location, run `Link-Discovery-TShark.bat` as an admin and you'll start `Link-Discovery-TShark.ps1`.
+
+Powershell should pop-up and ask you which network adapter you'd like to use. It'll listen for 60 seconds due to some devices only broadcasting in that interval. The data captured will be put into a variable and organized to fit an HTML format.
+
 This creates a file on your desktop and opens automatically once completed.
+
+### Run directly from PowerShell
+To run the script without having to save the files use:
+
+```ruby
+irm "https://raw.githubusercontent.com/enchap/LinkDiscoveryTShark/refs/heads/main/Link-Discovery-TShark.ps1" | iex
+```
