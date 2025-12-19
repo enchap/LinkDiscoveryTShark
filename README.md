@@ -195,7 +195,7 @@ Powershell should pop-up and ask you which network adapter you'd like to use. It
 This creates a file on your desktop and opens automatically once completed.
 
 ### Run directly from PowerShell
-To run the script without having to save the files use:
+To run the script without saving the files use:
 
 ```ruby
 irm "https://raw.githubusercontent.com/enchap/LinkDiscoveryTShark/refs/heads/main/Link-Discovery-TShark.ps1" | iex
