@@ -3,7 +3,7 @@ This is a Powershell script that was put together for the purpose of detecting t
 
 ## Prerequisites
 * [Wireshark](https://www.wireshark.org/)
-  * Npcap
+  * [Npcap](https://npcap.com/#download)
   * TShark
  
 ## LinkDiscoveryTShark
@@ -134,7 +134,11 @@ if ($captureData) {
     }
 } 
 else {
-    $resultsHTML = "<span class='no-data'>No LLDP or CDP packets received.<br>Time out reached (60s).</span>"
+    $resultsHTML = "<span class='no-data'>
+        Time out reached (60s).<br>
+        No LLDP or CDP packets received.<br>
+        Verify the interface selected is correct and the cable is secure.
+    </span>"
 }
 
 # 7. Generate HTML Report
